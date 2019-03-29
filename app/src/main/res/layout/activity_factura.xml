@@ -12,9 +12,29 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="32dp"
-        android:text="Contador de productos"
+        android:text="Factura"
         android:gravity="center"/>
-    
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="32dp"
+        android:text="Detalle del producto"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/usuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/correo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
     <android.support.v7.widget.GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -152,8 +172,6 @@
 
 
 
-
-
         <LinearLayout
             android:id="@+id/ll_producto7"
             android:orientation="vertical"
@@ -216,36 +234,5 @@
         </LinearLayout>
 
     </android.support.v7.widget.GridLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="8dp">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Usuario"/>
-        <EditText
-            android:id="@+id/usuario"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Escribe el usuario aqui"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Correo Electrónico"/>
-        <EditText
-            android:id="@+id/correo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Escribe el correo electronico"/>
-        <Button
-            android:id="@+id/btn_enviar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="enviar"/>
-    </LinearLayout>
 
 </LinearLayout>
