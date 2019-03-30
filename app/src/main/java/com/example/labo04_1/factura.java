@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -11,6 +12,7 @@ public class factura extends AppCompatActivity {
 
     TextView mProducto1, mProducto2, mProducto3, mProducto4, mProducto5, mProducto6, mProducto7, mProducto8, mProducto9;
     TextView mUsuario, mCorreo, mTotal;
+    Button btn_send;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,9 +45,22 @@ public class factura extends AppCompatActivity {
         mCorreo = findViewById(R.id.correo);
         mTotal = findViewById(R.id.total);
 
+        btn_send = findViewById(R.id.btn_send);
+
         mUsuario.setText("Usuario: " + mIntent.getStringExtra("usuario"));
         mTotal.setText("Total de compras: "+mIntent.getStringExtra("total"));
         mCorreo.setText("Correo: " + mIntent.getStringExtra("correo"));
+
+        String datos = mUsuario.getText().toString() + "\n" + mCorreo.getText().toString()
+                + "\n" + mTotal.getText().toString();
+
+        btn_send.setOnClickListener(v -> {
+            Intent mIntent2 = new Intent();
+            mIntent2.setAction(Intent.ACTION_SEND);
+            mIntent2.setType("text/plain");
+            mIntent2.putExtra(Intent.EXTRA_TEXT, datos);
+            startActivity(mIntent2);
+        });
 
     }
 }
